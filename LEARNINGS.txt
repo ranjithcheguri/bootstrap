@@ -1,0 +1,4 @@
+1. bootstrap basics { container, row, row-header, row-content,col-sm-10, col-12, justify-content-center, col-auto, offset-1,align-self-center, CSS }
+2. bootstrap Navbar { navbar-toggler, navbar-toggler-icon, fixed-top, navbar-brand, navbar-collapse, mr-auto,navbar, navbar-expand-md, navbar-nav }
+3. bootstrap breadcrumbs { breadcrumb, breadcrumb-item }
+4. Icon fonts { font awesome, bootstrap-social, 
