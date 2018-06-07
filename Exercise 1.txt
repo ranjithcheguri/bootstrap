@@ -1,0 +1,49 @@
+1. First package.json file and index.html are provided in the kit
+2. npm install --> used in current folder and installed node lite server.
+3. open this in sublimetext and create folder .gitignore (for node_modules).
+4. Before doing anywork, commit the current state of the files.
+	commands :	git init
+			git add .
+			git status
+			git commit -m "Initial Commit"
+5. Go to bitbucket, create one repository, add remote location to local and sync it.
+	repo name : Ex1_Bootstrap1
+	Commands :
+			git remote add origin https://ranjithcheguri@bitbucket.org/ranjithcheguri/ex1_bootstrap1.git 
+			git push -u origin master ( give bitbucket password)
+6.Install bootstrap from commands, after that you need to install jQuery and popper.js
+	Commands :
+			npm install Bootstrap@4.1.1 --save
+			npm install jquery@3.3.1 popper.js@1.12.9 --save
+7. start lite server and enjoy coding.
+	Commands :						
+			npm start
+8. goto Html doc and in HEAD tag paste meta tags and Bootstrap CSS code snippet.
+	
+	<!-- Required meta tags always come first -->
+    
+	<meta charset="utf-8">
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    
+
+	<!-- Bootstrap CSS -->
+    
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+9. This is pasted last (in body) because this javascript can wait but CSS needs to be loaded first.
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    
+	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    
+	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+10. Now save Index file and see how changes are reflected in browser.
+
+	** TIME TO FIRST COMMIT **
