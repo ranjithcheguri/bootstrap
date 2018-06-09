@@ -2,5 +2,9 @@
 2. bootstrap Navbar { navbar-toggler, navbar-toggler-icon, fixed-top, navbar-brand, navbar-collapse, mr-auto,navbar, navbar-expand-md, navbar-nav }
 3. bootstrap breadcrumbs { breadcrumb, breadcrumb-item }
 4. Icon fonts { font awesome, bootstrap-social (import both in html head) }
-5. Buttons{ btn, btn-group, btn-primary, btn-info, btn-success }
-6. Forms{ col-form-label, form-control, form-check-input, placeholder, type="tel/email", checkbox }
+5. bootsrap Buttons{ btn, btn-group, btn-primary, btn-info, btn-success }
+6. Forms { col-form-label, form-control, form-check-input, placeholder, type="tel/email", checkbox }
+7. bootstrap tables { table-responsive, table table-striped, thead-dark, table-bordered, table-hover, table-sm, bg-success, bg-danger}
+8. bootstrap cards { card, card-header,card-body, card-img-top,card-title,card-text, text-white, blockquote,, blockquote-footer, cite tag }
+9. Images in website { img-fluid, img-thumbnail, rounder-top/left, rounded-corner, rounded-circle, media d-flex mr-3, media-object, media-body }
+10. videos {embed-responsive,embed-responsive-4by3 / 16by9, <iframe/video/object/embed embed-responsive-item }
