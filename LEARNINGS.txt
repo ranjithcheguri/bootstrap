@@ -8,3 +8,21 @@
 8. bootstrap cards { card, card-header,card-body, card-img-top,card-title,card-text, text-white, blockquote,, blockquote-footer, cite tag }
 9. Images in website { img-fluid, img-thumbnail, rounder-top/left, rounded-corner, rounded-circle, media d-flex mr-3, media-object, media-body }
 10. videos {embed-responsive,embed-responsive-4by3 / 16by9, <iframe/video/object/embed embed-responsive-item }
+11. Alerting users { badge, badge-pill/secondary/danger, alert,alert-warning/dismissible (requires button),data-dismiss, progress, progress-bar/progress-bar-striped,-animated}
+Bootstrap-CSS based components completed. Bootstrap-javascript will follow now.
+12. Tabs and pills
+
+
+
+
+
+
+
+
+
+
+
+
+Note: assignment 2 learnings : always include each and every label or input or button of a row in seperate <div> and DONOT use col-12 col-md etc and form-control, form-check-label etc in ONE CLASS.
+	Refer index.html reservation card code for understanding.
+	If image and text both are used in a row, use media object and place img accordingly and then media-body i.e text contents and badges if any.
