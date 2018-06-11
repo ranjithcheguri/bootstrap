@@ -4,14 +4,14 @@
 4. Icon fonts { font awesome, bootstrap-social (import both in html head) }
 5. bootsrap Buttons{ btn, btn-group, btn-primary, btn-info, btn-success }
 6. Forms { col-form-label, form-control, form-check-input, placeholder, type="tel/email", checkbox }
-7. bootstrap tables { table-responsive, table table-striped, thead-dark, table-bordered, table-hover, table-sm, bg-success, bg-danger}
+7. bootstrap ta	bles { table-responsive, table table-striped, thead-dark, table-bordered, table-hover, table-sm, bg-success, bg-danger}
 8. bootstrap cards { card, card-header,card-body, card-img-top,card-title,card-text, text-white, blockquote,, blockquote-footer, cite tag }
 9. Images in website { img-fluid, img-thumbnail, rounder-top/left, rounded-corner, rounded-circle, media d-flex mr-3, media-object, media-body }
 10. videos {embed-responsive,embed-responsive-4by3 / 16by9, <iframe/video/object/embed embed-responsive-item }
 11. Alerting users { badge, badge-pill/secondary/danger, alert,alert-warning/dismissible (requires button),data-dismiss, progress, progress-bar/progress-bar-striped,-animated}
 Bootstrap-CSS based components completed. Bootstrap-javascript will follow now.
-12. Tabs and pills
-
+12. Tabs and pills { nav nav-tabs, nav-item, nav-link, tab-content, tab-pane }
+13. collapse, accordion {}
 
 
 
