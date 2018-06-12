@@ -14,6 +14,7 @@ Bootstrap-CSS based components completed. Bootstrap-javascript will follow now.
 13. collapse, accordion { id="accordion",card, card-header,collapse,card-body, data-parent="#accordion",}
 14. tooltips {data-toggle,data-html, title, data-placement,to activate this in document.ready function declare data-toggle="tooltip"}
 15. modals {data-toggle, modal fade, modal-dialog modal-lg, modal-content, modal-header,modal-body,modal-title, close, data-dismiss, &times; , }
+16. carousel {col, carousel slide, data-rider, carousel-inner, carousel-item active, carousel-caption,carousel-indicators, carousel-control-prev, carousel-control-prev-icon, data-slide (css for carousel, carousel-item, carousel-item img) }
 
 
 
