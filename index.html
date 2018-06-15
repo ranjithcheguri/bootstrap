@@ -219,6 +219,11 @@
                      <a class="carousel-control-next" href="#mycarousel" data-slide="next" role="button">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carousel-pause"> <span class="fa fa-pause"></span></button>
+                         <button class="btn btn-danger btn-sm" id="carousel-play"> <span class="fa fa-play"></span></button>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -231,7 +236,7 @@
                 <div class="media">
                     <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="uthapizza"></img>
                     <div class="media-body">
-                         <h2>Uthappizza 
+                         <h2 >Uthappizza 
                             <span class="badge badge-danger">HOT</span>
                             <span class="badge badge-pill badge-secondary">4.99$</span></h2> 
                         <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
@@ -323,6 +328,18 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('#mycarousel').carousel({interval:2000});
+        $('#carousel-pause').click(function(){
+            $('#mycarousel').carousel('pause');
+        })
+        $('#carousel-play').click(function(){
+            $('#mycarousel').carousel('cycle');
+        })
+    });
+    </script>
 
     // <script type="text/javascript">
     // $(document).ready(function(){

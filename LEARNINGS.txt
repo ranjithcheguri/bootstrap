@@ -15,6 +15,9 @@ Bootstrap-CSS based components completed. Bootstrap-javascript will follow now.
 14. tooltips {data-toggle,data-html, title, data-placement,to activate this in document.ready function declare data-toggle="tooltip"}
 15. modals {data-toggle, modal fade, modal-dialog modal-lg, modal-content, modal-header,modal-body,modal-title, close, data-dismiss, &times; , }
 16. carousel {col, carousel slide, data-rider, carousel-inner, carousel-item active, carousel-caption,carousel-indicators, carousel-control-prev, carousel-control-prev-icon, data-slide (css for carousel, carousel-item, carousel-item img) }
+17. Jquery selectors { p,button, #mycarousel, .btn,.btn-default, "[href]","[data-toggle="tool-tip"]", $(this) }
+18. jQuery Events { ex: mouse: click, dblclick,mouseenter,mouseleave, Form:submit,change,focus,blur, Document,Window : load,resize,unload,scroll}
+19. 
 
 
 
