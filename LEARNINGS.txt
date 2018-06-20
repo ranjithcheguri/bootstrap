@@ -19,7 +19,8 @@ Bootstrap-CSS based components completed. Bootstrap-javascript will follow now.
 18. jQuery Events { ex: mouse: click, dblclick,mouseenter,mouseleave, Form:submit,change,focus,blur, Document,Window : load,resize,unload,scroll}
 19. jQueryclasses {children, hasclass, removeClass, addClass}
 20. Less and Sass { variables, nesting selectors, Mixins(with with out parameters), Functions & Expressions : lists, strings, color operations; Imports}
-21. Building and Deployment { }
+21. Building and Deployment { Instructions file using NPM script}
+22. Grunt { Instructions file }
 
 
 
