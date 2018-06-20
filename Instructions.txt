@@ -1,0 +1,199 @@
+****  SETTING UP ENVIRONMENTS *****
+
+**** SETTING UP GIT *****
+
+1. Download & Install Git
+2. Install Submile Text/ any other Editor.
+3. setup git
+https://www.coursera.org/learn/bootstrap-4/lecture/I85Lx/exercise-video-basic-git-commands
+https://www.youtube.com/watch?time_continue=175&v=eTOgjQ9o4vQ
+
+	Useful git Commands : 	git version
+				git init
+				git config --list
+				*git status
+				*git add .
+				*git commit -m "first commit"
+				git log --oneline
+				git checkout 900cfcf index.html
+				git reset HEAD index.html
+				git checkout --index.html
+
+	First, it's always worth noting that git reset --hard is a potentially dangerous command, 
+	since it throws away all your uncommitted changes. For safety, you should always check that the 
+	output of git status is clean (that is, empty) before using it.
+
+**** SETTING UP BITBUCKET REPOSITORY SYNC ****
+
+4. Mirror your local git respository to online (github)
+	https://www.coursera.org/learn/bootstrap-4/lecture/q4cvV/exercise-video-online-git-repositories
+	git remote add origin https://ranjithcheguri@bitbucket.org/ranjithcheguri/test-fullstackdev.git
+	*git push -u origin master
+you can mirror to only one repo either github or bitbucket.
+5. clone your online repo to local 
+	git clone https://ranjithcheguri@bitbucket.org/ranjithcheguri/test-fullstackdev.git
+
+**** SETTING UP NODE AND LITE SERVER ****
+
+6.Set up Nods.js and NPM
+	package.json file - manifestation file, contains details of what all packages are used, version req etc.
+	https://docs.npmjs.com/files/package.json
+	https://www.coursera.org/learn/bootstrap-4/lecture/L3Q8S/exercise-video-basics-of-node-js-and-npm
+		Commands :	npm init				// package.json is created with all the details
+				npm install lite-server --save-dev (we have setup,lite server as dev env for node)	// node_modules is created, C:\git-test\node_modules\lite-server imp folder
+
+7.open package.json add 
+	"start" : "npm run lite" and 
+	"lite" : "lite-server" in "scripts"
+
+8. start lite-server
+		commands : npm start ( in package.json, start value is npm run lite and lite value is lite-server, it starts the lite-server)
+	By default it is hosted on localserver else we can have our host address.
+9. How to exclude some folders to mirror online (ex: node_modules not required, as it can be obtained just with one command npm install)
+	Create new file in git-test(Git Env) ".gitignore"
+	// try commit and check that its not synced.
+
+*** BOOTSTRAP LIBRARY EXCERCISE ***	
+
+1. First package.json file and index.html are provided in the kit
+2. npm install --> used in current folder and installed node lite server.
+3. open this in sublimetext and create folder .gitignore (for node_modules).
+4. Before doing anywork, commit the current state of the files.
+	commands :	git init
+			git add .
+			git status
+			git commit -m "Initial Commit"
+5. Go to bitbucket, create one repository, add remote location to local and sync it.
+	repo name : Ex1_Bootstrap1
+	Commands :
+			git remote add origin https://ranjithcheguri@bitbucket.org/ranjithcheguri/ex1_bootstrap1.git 
+			git push -u origin master ( give bitbucket password)
+6.Install bootstrap from commands, after that you need to install jQuery and popper.js
+	Commands :
+			npm install Bootstrap@4.1.1 --save
+			npm install jquery@3.3.1 popper.js@1.12.9 --save
+7. start lite server and enjoy coding.
+	Commands :						
+			npm start
+8. goto Html doc and in HEAD tag paste meta tags and Bootstrap CSS code snippet.
+	
+	<!-- Required meta tags always come first -->
+    
+	<meta charset="utf-8">
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    
+
+	<!-- Bootstrap CSS -->
+    
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+9. This is pasted last (in body) because this javascript can wait but CSS needs to be loaded first.
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    
+	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    
+	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+10. Now save Index file and see how changes are reflected in browser.
+
+***** LESS AND SASS for CSS *****
+
+11. Install less on your system : 
+	npm install -g less@2.7.2
+	cd css
+	lessc styles.less styles.css
+12. Install Sass :
+	npm install --save-dev node-sass@4.7.2 ( npm install node-sass )
+	"scss":"node-sass -o css/ css/" ( declare in package.json, output of converted files will be css folder and source will also be in css folder)
+	npm run scss
+
+***** BUILDING AND DEPLOYMENT: npm modules ******
+
+13. On change module : watch files in proj folder and when these files changes a task will be triggered. (11,12 can be automated)
+	
+	npm install --save-dev onchange@3.3.0 parallelshell@3.0.2
+	"watch:scss" : "onchange \"css/*.scss\" -- npm run scss" (in package.json, --npm X -- npm is correct)
+	
+    parallel shell  : allows to execute two scipts parallelly
+		
+	"watch:all" : " parallelshell \"npm run watch:scss\" \"npm run lite\" "
+	"start" : "npm run watch:all" ( changed )
+	** these watch will work on already created .css file from scss, so at first we have to run command : npm run scss and then we can watch **
+		
+14. Deployment : 
+	combine all the files included in header, script files at bottom and entire code into single file.
+	single html file
+	single css files, which includes bootstrap, fontawesome etc
+	single js file
+
+	one dist (distribution folder is setup for all this)
+	
+	******  SETUP for COPY and CLEAN of files *****
+
+		npm install --save-dev rimraf@2.6.2 						(rimraf helps in cleaning a folder)
+		"clean" : "rimraf dist" 							(package.json)
+		npm -g install copyfiles@2.0.0 							(copying files from one to other folder, copy fonts etc )
+		"copyfonts" : "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts" 	(package.json)
+		npm run copyfonts 								(dist folder is created and fonts used are copied there)
+		npm run clean 									(dist folder now created will be deleted, SETUP for copy,clean is done. )
+
+	******  SETUP for COMPRESSING and MINIFYING IMAGES *****
+		
+		npm -g install imagemin@3.0.0 								(or npm install -g imagemin-cli@3.0.0 --unsafe-perm=true --allow-root)
+		"imagemin" : "imagemin img/* -o dist/img"
+
+	******  SETUP for MINIFYING CSS,JS,HTML ******
+
+		npm install --save-dev usemin-cli@0.5.1	cssmin@0.4.3 uglifyjs@2.4.11 htmlmin@0.0.7 	(usemin allows to do transformation to combine all html,cs,js files and put into dist folder with the help of cssmin,uglifyjs,htmlmin)
+		<!-- build:css css/main.css -->								(comments at the top, to be recognised by usemin for minifying)
+		<!-- endbuild -->									(all the stuff between these are minified)					
+		<!-- build:js js/main.js -->
+		<!-- endbuild -->
+		"usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+
+	****** BUILDING DISTRIBUTION/DEPLOYMENT FOLDER *****
+
+		"build" : "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"	(creates final distribution folder)
+		npm run build										( ready to deploy on web server after this)
+
+
+15. ************** SETTING UP GRUNT *****************
+	
+	npm install -g grunt-cli@1.2.0									(globally)
+	npm install grunt@1.0.2 --save-dev								(install locally for our proj)
+	gruntfile.js											(create file)
+	npm install --save-dev grunt-sass@2.1.0
+	npm install --save-dev time-grunt@1.4.0 jit-grunt@0.10.0  					(jit loads node modules when required)
+	npm install --save-dev grunt-contrib-watch@1.0.0 						(watch grunt plugin, enables to keep watch of file changes)
+	npm install --save-dev grunt-browser-sync@2.2.0							(for saving files from proj folder, so that I can see in browser)
+	grunt 
+
+	COPY,CLEAN and MINIFICATION using GRUNT	
+
+	npm install --save-dev grunt-contrib-copy@1.0.0 grunt-contrib-clean@1.1.0 			(install copy and clean grunt plugins)
+	npm install --save-dev grunt-contrib-imagemin@2.0.1						(install imagemin grunt plugin)
+	npm install --save-dev grunt-contrib-concat@1.0.1 grunt-contrib-cssmin@2.2.1 grunt-contrib-htmlmin@2.4.0 grunt-contrib-uglify@3.3.0 grunt-filerev@2.3.1 grunt-usemin@3.1.1  (filerev,usemin is not contrib)
+
+
+16. ************** SETTING UP GULP *****************
+
+	npm -g install gulp-cli@2.0.1
+	npm install gulp@3.9.1 --save-dev 
+	npm install --save-dev gulp-sass@3.1.0
+	npm install --save-dev browser-sync@2.23.6							(not gulp-browser-sync)	
+	gulpfile.js
+	npm install --save-dev del@3.0.0								(cleans files, copy plugin is not required, gulp has inbuilt)
+	npm install --save-dev gulp-imagemin@4.1.0
+	npm install --save-dev gulp-uglify@3.0.0 gulp-usemin@0.3.29 gulp-rev@8.1.1 gulp-clean-css@3.9.3 gulp-flatmap@1.0.2 gulp-htmlmin@4.0.0														
+	
+	
+
+
+	
